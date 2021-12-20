@@ -7,7 +7,6 @@ declare(strict_types=1); ?>
 
 <article>
     <h1>Sign up</h1>
-
     <form action="app/users/registerlogic.php" method="post" enctype="multipart/form-data">
 
         <div>
