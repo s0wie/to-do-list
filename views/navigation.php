@@ -7,7 +7,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/about.php">About</a>
+                <a class="nav-link" href="/account.php">My account</a>
             </li>
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
