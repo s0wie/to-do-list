@@ -12,9 +12,9 @@
 
         <li class="nav-item">
             <?php if (isset($_SESSION['user'])) : ?>
-                <a class="nav-link" href="/app/users/logout.php">Logout</a>
+                <a href="/app/users/logout.php" class="nav-link">Logout</a>
             <?php else : ?>
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="login.php">Login</a>
+                <a href="/login.php" class="nav-link">Login</a>
             <?php endif; ?>
         </li>
     </ul>
