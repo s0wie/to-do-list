@@ -8,12 +8,11 @@ declare(strict_types=1); ?>
 <article>
     <h1>Sign up</h1>
     <form action="app/users/register.php" method="post" enctype="multipart/form-data">
-
-        <div>
+        <!-- <div>
             <label for="avatar">Choose a PNG image to upload</label>
             <input type="file" name="avatar" id="avatar" accept=".png" required>
             <small class="form-text">Please choose a profile picture</small>
-        </div>
+        </div> -->
 
         <div class="mb-3">
             <label for="username">Username</label>
