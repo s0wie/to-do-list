@@ -16,6 +16,12 @@
                     <a href="/login.php" class="nav-link">Login</a>
                 <?php endif; ?>
             </li>
+            <li class="nav-item">
+                <?php if (isset($_SESSION['user'])) : ?>
+                <?php else : ?>
+                    <a href="/register.php" class="nav-link">Sign up</a>
+                <?php endif; ?>
+            </li>
         </ul>
     </div>
 </nav>

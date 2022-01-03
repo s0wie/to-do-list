@@ -7,7 +7,7 @@ declare(strict_types=1); ?>
 
 <article>
     <h1>Sign up</h1>
-    <form action="app/users/registerlogic.php" method="post" enctype="multipart/form-data">
+    <form action="app/users/register.php" method="post" enctype="multipart/form-data">
 
         <div>
             <label for="avatar">Choose a PNG image to upload</label>
@@ -34,8 +34,6 @@ declare(strict_types=1); ?>
 
         <button type="submit" class="btn btn-primary">Sign up</button>
     </form>
-    <p>Already have an account?</p>
-    <a href="register.php" class="btn btn-warning">Log in</a>
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
