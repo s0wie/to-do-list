@@ -7,11 +7,18 @@
 
     <section>
         <h3>Change your email adress</h3>
+        <p><?php echo $_SESSION['user']['id']; ?></p>
 
         <form action="app/users/update.php" method="post">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input class="form-control" type="email" name="email" id="email" placeholder="example@example.com" required>
+                <input class="form-control" type="email" name="email" id="email" placeholder="<?php echo $_SESSION['user']['email']; ?>" required>
+                <small>
+                    <?php if (isset($_SESSION['changedEmail'])) :
+                        echo $_SESSION['changedEmail'];
+                        unset($_SESSION['changedEmail']);
+                    endif ?>
+                </small>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
@@ -24,7 +31,15 @@
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input class="form-control" type="password" name="password" id="password" required>
-                <small class="form-text">Change your password.</small>
+
+                <small class="form-text">
+                    <?php if (isset($_SESSION['changedPassword'])) :
+                        echo $_SESSION['changedPassword'];
+                        unset($_SESSION['changedPassword']);
+
+                    endif
+                    ?>
+                </small>
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>
