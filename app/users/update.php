@@ -5,16 +5,18 @@ require __DIR__ . '/../autoload.php';
 
 if (isset($_FILES['avatar'])) {
     $avatar = $_FILES['avatar'];
-    $avatarDestination = __DIR__ . '/../database/images/' . date("Y-m-d H:i:s") . 'avatar.png';
+    $avatarDestination = __DIR__ . '/../database/images/' . date("Y-m-d H:i:s") . $avatar['name'];
     move_uploaded_file($avatar['tmp_name'], $avatarDestination);
 
-    $imageUrl = date("Y-m-d H:i:s") . 'avatar.png';
+    $imageUrl = date("Y-m-d H:i:s") . $avatar['name'];
 
     $query = ("UPDATE users SET image_url = :newImage WHERE id = :id");
     $statement = $database->prepare($query);
     $statement->bindParam(':newImage', $imageUrl, PDO::PARAM_STR);
     $statement->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
     $statement->execute();
+
+    $_SESSION['user']['image_url'] = $imageUrl;
 }
 
 if (isset($_POST['email'])) {

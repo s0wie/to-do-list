@@ -15,7 +15,7 @@
         <form action="app/users/update.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="avatar">Choose a PNG image to upload</label>
-                <input type="file" name="avatar" id="avatar" accept=".png" required>
+                <input type="file" name="avatar" id="avatar" accept=".png, .jpg, .jpeg" required>
                 <small class="form-text">Please choose a profile picture</small>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
