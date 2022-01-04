@@ -5,6 +5,7 @@
     <h1><?php echo $config['title']; ?></h1>
     <?php if (isset($_SESSION['user'])) : ?>
         <p>Welcome, <?php echo $_SESSION['user']['username']; ?>!</p>
+        <img src="/app/database/uploads/<?php echo $_SESSION['user']['image_url']; ?>" alt="">
     <?php else : ?>
         <p>This is the home page. </p>
     <?php endif; ?>

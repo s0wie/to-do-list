@@ -8,15 +8,15 @@
     <h6>Email</h6>
     <p><?php echo $_SESSION['user']['email']; ?></p>
     <h6>Profile picture</h6>
-    <img src="/app/database/images/<?php echo $_SESSION['user']['image_url']; ?>" alt="">
+    <img src="/app/database/uploads/<?php echo $_SESSION['user']['image_url']; ?>" alt="">
     <section>
         <h3>Upload a profile picture!</h3>
 
         <form action="app/users/update.php" method="post" enctype="multipart/form-data">
             <div>
-                <label for="avatar">Choose a PNG image to upload</label>
+                <label for="avatar">Choose an image to upload</label>
                 <input type="file" name="avatar" id="avatar" accept=".png, .jpg, .jpeg" required>
-                <small class="form-text">Please choose a profile picture</small>
+                <small class="form-text">File types accepted are png, jpg and jpeg.</small>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>

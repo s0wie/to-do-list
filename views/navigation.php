@@ -7,7 +7,16 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/account.php">My account</a>
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <a class="nav-link" href="/account.php">My account</a>
+                <?php else : ?>
+                <?php endif; ?>
+            </li>
+            <li class="nav-item">
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <a class="nav-link" href="/tasks.php">Tasks</a>
+                <?php else : ?>
+                <?php endif; ?>
             </li>
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
