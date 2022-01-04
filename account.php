@@ -3,12 +3,27 @@
 
 <article>
     <h1>My account</h1>
-    <p>Edit your email and password here. Also add profile pic.</p>
+    <h6>Username</h6>
+    <p><?php echo $_SESSION['user']['username']; ?></p>
+    <h6>Email</h6>
+    <p><?php echo $_SESSION['user']['email']; ?></p>
+    <h6>Profile picture</h6>
+    <img src="/app/database/images/<?php echo $_SESSION['user']['image_url']; ?>" alt="">
+    <section>
+        <h3>Upload a profile picture!</h3>
 
+        <form action="app/users/update.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="avatar">Choose a PNG image to upload</label>
+                <input type="file" name="avatar" id="avatar" accept=".png" required>
+                <small class="form-text">Please choose a profile picture</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+    </section>
     <section>
         <h3>Change your email adress</h3>
-        <p><?php echo $_SESSION['user']['email']; ?></p>
-
         <form action="app/users/update.php" method="post">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
