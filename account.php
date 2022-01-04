@@ -7,7 +7,7 @@
 
     <section>
         <h3>Change your email adress</h3>
-        <p><?php echo $_SESSION['user']['id']; ?></p>
+        <p><?php echo $_SESSION['user']['email']; ?></p>
 
         <form action="app/users/update.php" method="post">
             <div class="mb-3">

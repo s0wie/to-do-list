@@ -11,10 +11,8 @@ if (isset($_POST['email'])) {
     $statement->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
     $statement->execute();
 
-    $statement = $database->query('SELECT * FROM users WHERE id = :id');
-    $_SESSION['user'] = $statement->fetch(PDO::FETCH_ASSOC);
-
-    $_SESSION['changedEmail'] = "Your email is now changed";
+    $_SESSION['changedEmail'] = "Your email is now changed to $newEmail";
+    $_SESSION['user']['email'] = $newEmail;
 }
 
 if (isset($_POST['password'])) {
