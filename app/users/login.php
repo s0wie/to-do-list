@@ -6,6 +6,8 @@ require __DIR__ . '/../autoload.php';
 
 // In this file we login users.
 
+// TO DO: ADD ERROR MESSAGES
+
 if (isset($_POST['email'], $_POST['password'])) {
     $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
 

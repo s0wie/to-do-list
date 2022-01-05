@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../autoload.php';
 
-
+// HANDLING PROFILE PICTURE
 if (isset($_FILES['avatar'])) {
     $avatar = $_FILES['avatar'];
     $avatarDestination = __DIR__ . '/../database/images/' . date("Y-m-d H:i:s") . $avatar['name'];
@@ -17,8 +17,11 @@ if (isset($_FILES['avatar'])) {
     $statement->execute();
 
     $_SESSION['user']['image_url'] = $imageUrl;
+
+    // TO DO: VALIDATE TYPE AND SIZE
 }
 
+// HANDLING EMAIL CHANGE
 if (isset($_POST['email'])) {
     $newEmail = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
 
@@ -32,6 +35,7 @@ if (isset($_POST['email'])) {
     $_SESSION['user']['email'] = $newEmail;
 }
 
+// HANDLING PASSWORD CHANGE
 if (isset($_POST['password'])) {
     $newPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 

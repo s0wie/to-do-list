@@ -5,7 +5,6 @@ declare(strict_types=1); ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
 
-
 <article>
     <h1>Your tasks</h1>
     <ul>

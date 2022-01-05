@@ -5,6 +5,7 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 // In this file we store/insert new posts in the database.
+
 // INSERT TASKS
 if (isset($_POST['title'], $_POST['deadline'], $_POST['description'])) {
     $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));

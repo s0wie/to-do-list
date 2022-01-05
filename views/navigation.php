@@ -14,6 +14,12 @@
             </li>
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
+                    <a class="nav-link" href="/lists.php">Lists</a>
+                <?php else : ?>
+                <?php endif; ?>
+            </li>
+            <li class="nav-item">
+                <?php if (isset($_SESSION['user'])) : ?>
                     <a class="nav-link" href="/tasks.php">Tasks</a>
                 <?php else : ?>
                 <?php endif; ?>
