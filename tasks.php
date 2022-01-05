@@ -37,12 +37,12 @@ declare(strict_types=1); ?>
         </div>
         <div class="mb-3">
             <label for="list">List</label>
-            <select class="form-select" id="list">
+            <select class="form-select" name="list" id="list">
                 <?php foreach ($lists as $list) : ?>
-                    <option><?php echo $list['title'] ?></option>
+                    <option value="<?php echo $list['id'] ?>"><?php echo $list['title']; ?></option>
                 <?php endforeach ?>
+            </select>
         </div>
-
 
         <button type="submit" class="btn btn-primary">Sign up</button>
     </form>
