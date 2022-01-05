@@ -9,7 +9,11 @@ declare(strict_types=1); ?>
     <h1>Your tasks</h1>
     <ul>
         <?php foreach ($tasks as $task) : ?>
-            <li> <?php echo $task['title'], $task['description'], $task['deadline']; ?> </li>
+            <li> <input type="checkbox" id="<?php $task['id'] ?>">
+                <?php echo $task['title'], $task['description'], $task['deadline']; ?> <button>Edit</button>
+                <button>Delete</button>
+            </li>
+
         <?php endforeach ?>
 
     </ul>
