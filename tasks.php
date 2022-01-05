@@ -26,18 +26,19 @@ declare(strict_types=1); ?>
             <input class="form-control" type="date" name="deadline" id="deadline" placeholder="date" required>
             <small class="form-text">Add deadline.</small>
         </div>
-
-        <div class="mb-3">
-            <label for="list">List</label>
-            <input class="form-control" type="text" name="list" id="list">
-            <small class="form-text">Please provide the you password (passphrase).</small>
-        </div>
-
         <div class="mb-3">
             <label for="description">Description</label>
             <input class="form-control" type="text" name="description" id="description" required>
             <small class="form-text">Please provide the your password (passphrase).</small>
         </div>
+        <div class="mb-3">
+            <label for="list">List</label>
+            <select class="form-select" id="list">
+                <?php foreach ($lists as $list) : ?>
+                    <option><?php echo $list['title'] ?></option>
+                <?php endforeach ?>
+        </div>
+
 
         <button type="submit" class="btn btn-primary">Sign up</button>
     </form>

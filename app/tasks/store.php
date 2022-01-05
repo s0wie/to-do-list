@@ -20,7 +20,18 @@ if (isset($_POST['title'], $_POST['deadline'], $_POST['description'])) {
     $statement->execute();
 
     $statement = $database->query("SELECT * FROM tasks");
+    redirect('/tasks.php');
 }
 
+// INSERT LISTS
+if (isset($_POST['list-title'])) {
+    $title = trim(filter_var($_POST['list-title'], FILTER_SANITIZE_STRING));
 
-redirect('/tasks.php');
+    $statement = $database->prepare("INSERT INTO lists (title, user_id) VALUES (:title, :userId)");
+    $statement->bindParam(':title', $title, PDO::PARAM_STR);
+    $statement->bindParam(':userId', $_SESSION['user']['id'], PDO::PARAM_INT);
+    $statement->execute();
+
+    $statement = $database->query("SELECT * FROM lists");
+    redirect('/lists.php');
+}

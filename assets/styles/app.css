@@ -1,1 +1,15 @@
 /* In this file you can add your custom styles. */
+.grid-container {
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.grid-item {
+  background-color: blue;
+}
+
+.card-title {
+  margin: 1rem;
+}
