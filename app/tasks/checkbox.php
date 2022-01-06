@@ -5,7 +5,6 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 // UPDATE CHECKBOX
-
 if (isset($_POST['checkbox'])) {
     $checkbox = 1;
     var_dump($checkbox);
@@ -28,14 +27,13 @@ if (isset($_POST['checkbox'])) {
 
 // EN STRÄNG SOM EN BOOL KOMMER ALLTID VARA SANT om den inte är tom.
 
-// $checked = isset($_POST['checkbox']) ? "true" : "false";
+// $checked = isset($_POST['checkbox']) ? 1 : 0;
 // die(var_dump($checked));
 // $query = ("UPDATE tasks SET completed = :completed WHERE id = :id");
-// die(var_dump($query));
 // $id = $_POST['id'];
 // $statement = $database->prepare($query);
 // $statement->bindParam(':completed', $checked, PDO::PARAM_STR);
 // $statement->bindParam(':id', $id, PDO::PARAM_INT);
 // $statement->execute();
 
-// redirect('/tasks.php');
+redirect('/tasks.php');

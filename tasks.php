@@ -10,10 +10,12 @@ declare(strict_types=1); ?>
     <ul>
         <?php foreach ($tasks as $task) : ?>
             <li style="display: flex">
-                <form action="/app/tasks/checkbox.php" method="post">
+                <form action="/app/tasks/checkbox.php" method="post" name="thisform<?php echo $task['id'] ?>">
                     <input type="hidden" value="<?= $task['id'] ?>" name="id" />
-                    <input type="checkbox" name="checkbox">
-                    <button type="submit">Save checkbox</button>
+                    <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox" <?php if ($task['completed'] == 1) {
+                                                                                                                                    echo "checked";
+                                                                                                                                }  ?>>
+
                     <?php var_dump($task); ?>
                 </form>
 
@@ -39,7 +41,7 @@ declare(strict_types=1); ?>
         </div>
         <div class="mb-3">
             <label for="deadline">Deadline</label>
-            <input class="form-control" type="date" name="deadline" id="deadline" placeholder="date" required>
+            <input class="form-control" type="date" name="deadline" id="deadline" placeholder="date">
             <small class="form-text">Add deadline.</small>
         </div>
         <div class="mb-3">
