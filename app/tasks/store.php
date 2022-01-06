@@ -20,7 +20,6 @@ if (isset($_POST['title'], $_POST['deadline'], $_POST['description'], $_POST['li
     $statement->bindParam(':description', $description, PDO::PARAM_STR);
     $statement->bindParam(':userId', $_SESSION['user']['id'], PDO::PARAM_INT);
     $statement->bindParam(':listId', $listId, PDO::PARAM_INT);
-
     $statement->execute();
 
     $statement = $database->query("SELECT * FROM tasks");

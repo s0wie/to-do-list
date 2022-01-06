@@ -14,9 +14,11 @@ declare(strict_types=1); ?>
                     <h5 class="card-title"><?php echo $list['title']; ?></h5>
                     <ul>
                         <?php foreach ($tasks as $task) : ?>
-                            <li>
-                                <?php echo $task['title']; ?>
-                            </li>
+                            <?php if ($task['list_id'] == $list['id']) : ?>
+                                <li>
+                                    <?php echo $task['title']; ?>
+                                </li>
+                            <?php endif ?>
                         <?php endforeach ?>
                     </ul>
                 </div>

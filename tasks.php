@@ -9,9 +9,14 @@ declare(strict_types=1); ?>
     <h1>Your tasks</h1>
     <ul>
         <?php foreach ($tasks as $task) : ?>
-            <li> <input type="checkbox" id="<?php $task['id'] ?>">
-                <?php echo $task['title'], $task['description'], $task['deadline']; ?> <button>Edit</button>
-                <button>Delete</button>
+            <li style="display: flex"> <input type="checkbox" id="<?php $task['id'] ?>">
+                <?php echo $task['title'], $task['description'], $task['deadline']; ?>
+                <!-- EDIT BUTTON -->
+                <form action="/edit-tasks.php" method="post">
+                    <input type="hidden" value="<?= $task['id'] ?>" name="id" />
+                    <button type="submit">EDIT
+                    </button>
+                </form>
             </li>
 
         <?php endforeach ?>
@@ -43,7 +48,6 @@ declare(strict_types=1); ?>
                 <?php endforeach ?>
             </select>
         </div>
-
         <button type="submit" class="btn btn-primary">Sign up</button>
     </form>
 </article>

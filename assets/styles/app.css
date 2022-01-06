@@ -13,3 +13,7 @@
 .card-title {
   margin: 1rem;
 }
+
+.card {
+  min-height: 15rem;
+}
