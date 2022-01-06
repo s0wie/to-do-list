@@ -9,7 +9,14 @@ declare(strict_types=1); ?>
     <h1>Your tasks</h1>
     <ul>
         <?php foreach ($tasks as $task) : ?>
-            <li style="display: flex"> <input type="checkbox" id="<?php $task['id'] ?>">
+            <li style="display: flex">
+                <form action="/app/tasks/checkbox.php" method="post">
+                    <input type="hidden" value="<?= $task['id'] ?>" name="id" />
+                    <input type="checkbox" name="checkbox">
+                    <button type="submit">Save checkbox</button>
+                    <?php var_dump($task); ?>
+                </form>
+
                 <?php echo $task['title'], $task['description'], $task['deadline']; ?>
                 <!-- EDIT BUTTON -->
                 <form action="/edit-tasks.php" method="post">
