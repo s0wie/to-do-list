@@ -4,6 +4,7 @@ declare(strict_types=1); ?>
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
+<?php require __DIR__ . '/app/tasks/data.php'; ?>
 
 <article>
     <h1>Your lists</h1>
@@ -96,7 +97,7 @@ declare(strict_types=1); ?>
 
         <div class="mb-3">
             <label for="list-title">List title</label>
-            <input class="form-control" type="text" name="list-title" id="list-title" required>
+            <input class="form-control" type="text" name="list-title" id="list-title">
         </div>
         <button type="submit" class="btn btn-primary">Add list</button>
     </form>

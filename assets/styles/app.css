@@ -16,7 +16,9 @@
   flex-direction: column;
   justify-content: space-between;
   /* background-color: lightyellow; */
-  background-color: #e8dff5;
+  background-color: #fffacd;
+  border-radius: 0;
+  transition-duration: 0.2s;
 }
 
 .top-card {
@@ -98,5 +100,13 @@ hr {
 @media (min-width: 1280px) {
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+    z-index: 2;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
   }
 }
