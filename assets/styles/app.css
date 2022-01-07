@@ -1,11 +1,9 @@
 /* In this file you can add your custom styles. */
-body {
-  background-color: #78c1ff;
-}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
+  grid-auto-flow: dense;
 }
 
 .card-title {
@@ -17,7 +15,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: lightyellow;
+  /* background-color: lightyellow; */
+  background-color: #e8dff5;
 }
 
 .top-card {
@@ -37,6 +36,8 @@ body {
 
 .list-item {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .list-item div {
@@ -58,11 +59,13 @@ hr {
 }
 
 .task-description {
+  font-weight: 300;
   display: none;
 }
 
 .task-deadline {
   font-weight: 300;
+  color: mediumblue;
 }
 
 .task-checked {
@@ -77,6 +80,11 @@ hr {
 
 .add-task:hover {
   color: #f8e16c;
+}
+
+/* ICONS */
+.edit-icon {
+  fill: black;
 }
 .edit-icon:hover {
   fill: black;
