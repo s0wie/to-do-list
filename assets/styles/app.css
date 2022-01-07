@@ -7,7 +7,7 @@
 }
 
 .card-title {
-  margin: 1rem;
+  margin: 2rem;
 }
 
 .card {
@@ -21,7 +21,8 @@
   transition-duration: 0.2s;
 }
 
-.top-card {
+.top-card,
+.bottom-card {
   display: flex;
   justify-content: space-between;
 }
@@ -67,7 +68,7 @@ hr {
 
 .task-deadline {
   font-weight: 300;
-  color: mediumblue;
+  color: hotpink;
 }
 
 .task-checked {
@@ -75,21 +76,27 @@ hr {
   text-decoration: line-through;
 }
 
-.add-task {
-  margin: 1rem;
-  font-size: 2rem;
-}
-
-.add-task:hover {
-  color: #f8e16c;
-}
-
-/* ICONS */
+/* BUTTONS */
 .edit-icon {
   fill: black;
 }
 .edit-icon:hover {
   fill: black;
+}
+
+.add-task {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.add-task:hover,
+.show-details:hover {
+  color: #f8e16c;
+}
+
+.show-details {
+  font-size: small;
+  margin: 1rem;
 }
 @media (min-width: 800px) {
   .grid-container {
@@ -103,7 +110,7 @@ hr {
   }
 
   .card:hover {
-    transform: scale(1.1);
+    transform: scale(105%);
     z-index: 2;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
       0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
