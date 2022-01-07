@@ -12,11 +12,12 @@ declare(strict_types=1); ?>
             <li style="display: flex">
                 <form action="/app/tasks/checkbox.php" method="post" name="thisform<?php echo $task['id'] ?>">
                     <input type="hidden" value="<?= $task['id'] ?>" name="id" />
+                    <!-- https://stackoverflow.com/questions/17660012/how-to-auto-submit-a-checkbox -->
                     <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox" <?php if ($task['completed'] == 1) {
                                                                                                                                     echo "checked";
                                                                                                                                 }  ?>>
 
-                    <?php var_dump($task); ?>
+                    <!-- <?php var_dump($task); ?> -->
                 </form>
 
                 <?php echo $task['title'], $task['description'], $task['deadline']; ?>
@@ -46,7 +47,7 @@ declare(strict_types=1); ?>
         </div>
         <div class="mb-3">
             <label for="description">Description</label>
-            <input class="form-control" type="text" name="description" id="description" required>
+            <input class="form-control" type="text" name="description" id="description">
             <small class="form-text">Please provide the your password (passphrase).</small>
         </div>
         <div class="mb-3">

@@ -25,15 +25,4 @@ if (isset($_POST['checkbox'])) {
     $statement->execute();
 }
 
-// EN STRÄNG SOM EN BOOL KOMMER ALLTID VARA SANT om den inte är tom.
-
-// $checked = isset($_POST['checkbox']) ? 1 : 0;
-// die(var_dump($checked));
-// $query = ("UPDATE tasks SET completed = :completed WHERE id = :id");
-// $id = $_POST['id'];
-// $statement = $database->prepare($query);
-// $statement->bindParam(':completed', $checked, PDO::PARAM_STR);
-// $statement->bindParam(':id', $id, PDO::PARAM_INT);
-// $statement->execute();
-
-redirect('/tasks.php');
+redirect('/lists.php');

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// In this file we delete new posts in the database.
+// DELETE TASK
 if (isset($_POST['id'])) {
     $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
     $statement = $database->prepare('DELETE FROM tasks WHERE id = :id');
@@ -15,4 +15,16 @@ if (isset($_POST['id'])) {
     // $insertSQL->bindParam(':id', $taskID, PDO::PARAM_INT);
 }
 
-redirect('/tasks.php');
+// DELETE LIST ALONG WITH TASKS
+if (isset($_POST['list-id'])) {
+    $id = filter_var($_POST['list-id'], FILTER_SANITIZE_NUMBER_INT);
+    $statement = $database->prepare('DELETE FROM lists WHERE id = :id');
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+
+    $statement2 = $database->prepare('DELETE FROM tasks WHERE list_id = :id');
+    $statement2->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement2->execute();
+}
+
+redirect('/lists.php');

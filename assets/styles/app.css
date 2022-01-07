@@ -16,4 +16,16 @@
 
 .card {
   min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-container {
+  min-height: 10rem;
 }
