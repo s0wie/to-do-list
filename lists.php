@@ -17,7 +17,7 @@ declare(strict_types=1); ?>
                         <!-- DELETE BUTTON -->
                         <form action="/app/tasks/delete.php" method="POST">
                             <input name="list-id" type="hidden" value="<?= $list['id'] ?>">
-                            <button>delete list</button>
+                            <button class="btn">X</button>
                         </form>
                     </div>
                     <!-- PRINTING TASKS -->
@@ -25,10 +25,10 @@ declare(strict_types=1); ?>
                         <ul>
                             <?php foreach ($tasks as $task) : ?>
                                 <?php if ($task['list_id'] == $list['id']) : ?>
-                                    <li>
+                                    <div class="li">
                                         <div class="list-item">
                                             <div>
-                                                <form action="/app/tasks/checkbox.php" method="post" name="thisform<?php echo $task['id'] ?>">
+                                                <form action="/app/tasks/checkbox.php" method="post" class="checkbox-form" name="thisform<?php echo $task['id'] ?>">
                                                     <input type="hidden" value="<?= $task['id'] ?>" name="id" />
                                                     <!-- https://stackoverflow.com/questions/17660012/how-to-auto-submit-a-checkbox -->
                                                     <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox" <?php if ($task['completed'] == 1) {
@@ -37,10 +37,10 @@ declare(strict_types=1); ?>
                                                 </form>
                                             </div>
                                             <!-- TASKS DISPLAY-->
-                                            <div class="task-info">
-                                                <div><?= $task['title'] ?></div>
+                                            <div class="<?= ($task['completed'] == 1) ? "task-checked" : "" ?>">
+                                                <div class="task-title"><?= $task['title'] ?></div>
                                                 <p class="task-description"><?= $task['description'] ?></p>
-                                                <small>
+                                                <small class="task-deadline">
                                                     <?php
                                                     if (daysLeft($task['deadline']) != 18999 && daysLeft($task['deadline']) < 30) :
                                                         echo daysLeft($task['deadline']) . " day(s) left!";
@@ -60,20 +60,27 @@ declare(strict_types=1); ?>
                                             <!-- DELETE TASK BUTTON/FORM -->
                                             <form action="/app/tasks/delete.php" method="post">
                                                 <input type="hidden" value="<?= $task['id'] ?>" name="id" />
-                                                <button type="submit"> Y
+                                                <button type="submit">
+                                                    Y
                                                 </button>
                                             </form>
                                         </div>
-                                    </li>
+                                    </div>
                                 <?php endif ?>
                             <?php endforeach ?>
                         </ul>
                     </div>
                     <!-- ADD TASK BUTTON -->
-                    <form action="">
-                        <input type="hidden" value="<?php $list['id'] ?>">
-                        <button class="add-task">ADD TASK</button>
-                    </form>
+                    <div>
+                        <form action="/tasks.php">
+                            <input type="hidden" value="<?php $list['id'] ?>">
+                            <button class="add-task btn add-class-container">
+                                +
+                                <span class="tooltip-text">Add a task</span>
+                            </button>
+
+                        </form>
+                    </div>
                 </div>
             </section>
         <?php endforeach ?>

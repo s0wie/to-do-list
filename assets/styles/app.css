@@ -1,7 +1,10 @@
 /* In this file you can add your custom styles. */
+body {
+  background-color: #78c1ff;
+}
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
 
@@ -14,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: pink;
+  background-color: lightyellow;
 }
 
 .top-card {
@@ -26,10 +29,12 @@
   min-height: 10rem;
 }
 
-li {
+.li {
   display: flex;
   justify-content: space-between;
+  margin-right: 1rem;
 }
+
 .list-item {
   display: flex;
 }
@@ -39,12 +44,46 @@ li {
 }
 .list-buttons {
   display: flex;
+  margin-right: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.add-task {
-  margin: 1rem;
+/* TASKS */
+.task-title {
+  font-weight: 500;
 }
 
 .task-description {
   display: none;
+}
+
+.task-deadline {
+  font-weight: 300;
+}
+
+.task-checked {
+  color: #f8e16c;
+  text-decoration: line-through;
+}
+
+.add-task {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.add-task:hover {
+  color: #f8e16c;
+}
+
+@media (min-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
