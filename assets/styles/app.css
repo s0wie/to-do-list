@@ -49,6 +49,9 @@ body {
   align-items: center;
 }
 
+hr {
+  margin-right: 2rem;
+}
 /* TASKS */
 .task-title {
   font-weight: 500;
@@ -63,7 +66,7 @@ body {
 }
 
 .task-checked {
-  color: #f8e16c;
+  color: #a9a9a9;
   text-decoration: line-through;
 }
 
@@ -75,7 +78,9 @@ body {
 .add-task:hover {
   color: #f8e16c;
 }
-
+.edit-icon:hover {
+  fill: black;
+}
 @media (min-width: 800px) {
   .grid-container {
     grid-template-columns: 1fr 1fr;
