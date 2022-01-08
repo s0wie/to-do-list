@@ -8,17 +8,15 @@ declare(strict_types=1); ?>
 
 <article>
     <section>
-        <h2>Create a note</h2>
+        <h2>Create a list</h2>
         <form action="app/tasks/store.php" method="post" enctype="multipart/form-data">
 
-            <div>
+            <div class="mb-3">
                 <label for="list-title">List title</label>
-                <input type="text" name="list-title" id="list-title">
-                <button type="submit" class="btn btn-primary">Add list</button>
+                <input class="form-control" type="text" name="list-title" id="list-title">
             </div>
+            <button type="submit" class="btn btn-primary">Add list</button>
         </form>
-    </section>
-    <section>
         <div class="grid-container">
             <?php foreach ($lists as $list) : ?>
                 <div class="card">
@@ -55,9 +53,9 @@ declare(strict_types=1); ?>
                                                                     echo "task-deadline";
                                                                 }  ?>">
                                                     <?php
-                                                    if (daysLeft($task['deadline']) != 18999 && daysLeft($task['deadline']) < 30) :
+                                                    if (daysLeft($task['deadline']) != 18999 && daysLeft($task['deadline']) <= 14) :
                                                         echo daysLeft($task['deadline']) . " day(s) left!";
-                                                    elseif (daysLeft($task['deadline']) != 18999 && daysLeft($task['deadline']) > 30) :
+                                                    elseif (daysLeft($task['deadline']) != 18999 && $task['deadline'] != "") :
                                                         echo "Due: " . $task['deadline'];
                                                     endif ?>
                                                 </small>
@@ -85,7 +83,6 @@ declare(strict_types=1); ?>
                                             </form>
                                         </div>
                                     </div>
-                                    <hr>
                                 <?php endif ?>
                             <?php endforeach ?>
                         </ul>
@@ -105,7 +102,6 @@ declare(strict_types=1); ?>
             <?php endforeach ?>
 
         </div>
-    </section>
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
