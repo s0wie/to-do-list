@@ -17,9 +17,10 @@ declare(strict_types=1); ?>
             </div>
             <button type="submit" class="btn btn-primary">Add list</button>
         </form>
+        <button class="btn show-details">show details</button>
         <div class="grid-container">
             <?php foreach ($lists as $list) : ?>
-                <div class="card">
+                <div class="card change-color">
                     <!-- CARD TOP -->
                     <div class="top-card">
                         <h5 class="card-title"><?php echo $list['title']; ?></h5>
@@ -63,7 +64,7 @@ declare(strict_types=1); ?>
                                         </div>
                                         <div class="list-buttons">
                                             <!-- EDIT BUTTON -->
-                                            <form action="/edit-tasks.php" method="post">
+                                            <form action="/edit_tasks.php" method="post">
                                                 <input type="hidden" value="<?= $task['id'] ?>" name="id" />
                                                 <button type="submit" class="btn">
                                                     <svg width="20" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +88,7 @@ declare(strict_types=1); ?>
                             <?php endforeach ?>
                         </ul>
                     </div>
-                    <!-- ADD TASK BUTTON -->
+                    <!-- ADD TASK AND SHOW DETAILS BUTTON -->
                     <div class="bottom-card">
                         <form action="/tasks.php">
                             <input type="hidden" value="<?php $list['id'] ?>">
@@ -96,7 +97,6 @@ declare(strict_types=1); ?>
                                 <span class="tooltip-text">Add a task</span>
                             </button>
                         </form>
-                        <button class="btn show-details">show details</button>
                     </div>
                 </div>
             <?php endforeach ?>

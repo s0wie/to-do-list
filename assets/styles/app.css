@@ -76,6 +76,10 @@ hr {
   text-decoration: line-through;
 }
 
+.title-description-container {
+  display: flex;
+}
+
 /* BUTTONS */
 .edit-icon {
   fill: black;
