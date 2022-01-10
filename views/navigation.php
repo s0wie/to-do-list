@@ -1,13 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <div style="margin-left: 1rem;">
-            <img src="../assets/images/logo-1.png" alt="stickywall-logo" width=200>
+            <a class="nav-link" href="/index.php"><img src="../assets/images/logo-1.png" alt="stickywall-logo" width=200></a>
         </div>
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/index.php">Home</a>
-            </li>
-
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
                     <a class="nav-link" href="/account.php">My account</a>
@@ -21,10 +17,7 @@
                 <?php endif; ?>
             </li>
             <li class="nav-item">
-                <?php if (isset($_SESSION['user'])) : ?>
-                    <a class="nav-link" href="/tasks.php">Tasks</a>
-                <?php else : ?>
-                <?php endif; ?>
+                <a class="nav-link" href="/index.php">Home</a>
             </li>
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
