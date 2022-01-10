@@ -12,13 +12,13 @@
                     &#127379;
                     &#128197;
                 </h1> -->
-                <h1>
+                <h1 class="font-vietnam">
                     Digital sticky notes. &#9997; </br>
                     Digital wall. 🧱 <br>
                 </h1>
-                <h2>Stickywall: A safe space for your organised chaos.</h2>
+                <h2 class="font-vietnam">Stickywall: A safe space for your organised chaos.</h2>
                 <form class="index-form" action="/register.php" method="POST">
-                    <label for="email">Start your journey by entering your email below.</label>
+                    <label for="email" class="font-vietnam">Start your journey by entering your email below.</label>
                     <div>
                         <input type="email" name="email" class="form-control" placeholder="Enter your email-adress here">
                         <button class="btn btn-primary" type="submit">Get started for free</button>
@@ -29,7 +29,7 @@
         <section>
             <!-- NOTE WITH INFO-->
             <div class="card index-card">
-                <h3 class="task-title text-primary kavivanar">Why stickywall?</h3>
+                <h3 class="task-title text-primary font-kavivanar">Why stickywall?</h3>
                 <div class="index-task">
                     <input type="checkbox" checked>
                     <div class="task-title">Create fast notes with tasks</div>

@@ -20,16 +20,17 @@ details.addEventListener('click', () =>
 //   })
 // );
 
-// ADD TASK BY DOUBLE CLICKING CARD
-const cards = document.querySelectorAll('.card');
-const forms = document.querySelectorAll('.add-task-form');
+// ADD TASK BY DOUBLE CLICKING CARD DOES NOT WORK EITHER
+// const cards = document.querySelectorAll('.card');
+// const forms = document.querySelectorAll('.add-task-form');
 
-cards.forEach((card) => {
-  card.addEventListener('dblclick', submitForm);
-});
+// // cards.forEach((card) => {
+// //   card.addEventListener('dblclick', submitForm);
+// // });
 
-function submitForm() {
-  forms.forEach((form) => {
-    form.submit();
-  });
-}
+// function submitForm() {
+// forms.forEach((form) => {
+//   form.submit();
+// });
+//
+// }

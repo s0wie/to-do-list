@@ -26,7 +26,7 @@ declare(strict_types=1); ?>
     <section>
         <div class="grid-container">
             <?php foreach ($lists as $list) : ?>
-                <div class="card change-color">
+                <div class="card" ondblclick="document.forms.thisform<?php echo $list['id'] ?>.submit();">
                     <!-- CARD TOP -->
                     <div class="top-card">
                         <h5 class="card-title"><?php echo $list['title']; ?></h5>
@@ -96,7 +96,7 @@ declare(strict_types=1); ?>
                     </div>
                     <!-- ADD TASK AND SHOW DETAILS BUTTON -->
                     <div class="bottom-card">
-                        <form class="add-task-form" action="/tasks.php" method="POST">
+                        <form class="add-task-form" action="/tasks.php" method="POST" name="thisform<?php echo $list['id'] ?>">
                             <label for="list-id-add"></label>
                             <input type="hidden" name="list-id-add" id="list-id-add" value="<?php echo $list['id'] ?>">
                             <button type="submit" class="add-task btn add-class-container">

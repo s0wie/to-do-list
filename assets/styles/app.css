@@ -16,8 +16,12 @@ body {
   );
 }
 
-.kavivanar {
+.font-kavivanar {
   font-family: 'Kavivanar', cursive;
+}
+
+.font-vietnam {
+  font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .show {
