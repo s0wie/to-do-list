@@ -23,7 +23,7 @@ if (isset($_POST['title'], $_POST['deadline'], $_POST['description'], $_POST['li
     $statement->execute();
 
     $statement = $database->query("SELECT * FROM tasks");
-    redirect('/tasks.php');
+    redirect('/lists.php');
 }
 
 // INSERT LISTS

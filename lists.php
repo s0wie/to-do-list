@@ -9,7 +9,7 @@ declare(strict_types=1); ?>
 <article>
     <!-- CREATE LIST -->
     <section class="create-list">
-        <h2>Create a list</h2>
+        <h2>Create a sticky note</h2>
         <form action="app/tasks/store.php" method="post" enctype="multipart/form-data" class="create-list-form">
 
             <div class="mb-3">
@@ -26,7 +26,7 @@ declare(strict_types=1); ?>
     <section>
         <div class="grid-container">
             <?php foreach ($lists as $list) : ?>
-                <div class="card" ondblclick="document.forms.thisform<?php echo $list['id'] ?>.submit();">
+                <div class="card" ondblclick="thisform<?php echo $list['id'] ?>.submit();">
                     <!-- CARD TOP -->
                     <div class="top-card">
                         <h5 class="card-title"><?php echo $list['title']; ?></h5>
@@ -107,7 +107,19 @@ declare(strict_types=1); ?>
                     </div>
                 </div>
             <?php endforeach ?>
+            <div class="card bg-white">
+                <h2>Create a sticky note</h2>
+                <form action="app/tasks/store.php" method="post" enctype="multipart/form-data" class="create-list-form">
 
+                    <div class="mb-3">
+                        <label for="list-title">List title</label>
+                        <input class="form-control" type="text" name="list-title" id="list-title">
+                    </div>
+                    <div class="create-list-buttons">
+                        <button type="submit" class="btn btn-primary">Add list</button>
+                    </div>
+                </form>
+            </div>
         </div>
 </article>
 
