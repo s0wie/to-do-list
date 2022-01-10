@@ -7,17 +7,23 @@ declare(strict_types=1); ?>
 <?php require __DIR__ . '/app/tasks/data.php'; ?>
 
 <article>
-    <section>
+    <!-- CREATE LIST -->
+    <section class="create-list">
         <h2>Create a list</h2>
-        <form action="app/tasks/store.php" method="post" enctype="multipart/form-data">
+        <form action="app/tasks/store.php" method="post" enctype="multipart/form-data" class="create-list-form">
 
             <div class="mb-3">
                 <label for="list-title">List title</label>
                 <input class="form-control" type="text" name="list-title" id="list-title">
             </div>
-            <button type="submit" class="btn btn-primary">Add list</button>
+            <div class="create-list-buttons">
+                <button type="submit" class="btn btn-primary">Add list</button>
+            </div>
         </form>
         <button class="btn show-details">show details</button>
+    </section>
+    <!-- WALL OF LISTS -->
+    <section>
         <div class="grid-container">
             <?php foreach ($lists as $list) : ?>
                 <div class="card change-color">

@@ -8,11 +8,6 @@ declare(strict_types=1); ?>
 <article>
     <h1>Sign up</h1>
     <form action="app/users/register.php" method="post" enctype="multipart/form-data">
-        <!-- <div>
-            <label for="avatar">Choose a PNG image to upload</label>
-            <input type="file" name="avatar" id="avatar" accept=".png" required>
-            <small class="form-text">Please choose a profile picture</small>
-        </div> -->
 
         <div class="mb-3">
             <label for="username">Username</label>
@@ -21,14 +16,15 @@ declare(strict_types=1); ?>
         </div>
         <div class="mb-3">
             <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email" placeholder="francis@darjeeling.com" required>
+            <input class="form-control" type="email" name="email" id="email" value="<?php if (isset($_POST['email'])) : echo $_POST['email'];
+                                                                                    endif ?>" required>
             <small class="form-text">Please provide the your email address.</small>
         </div>
 
         <div class="mb-3">
             <label for="password">Password</label>
             <input class="form-control" type="password" name="password" id="password" required>
-            <small class="form-text">Please provide the your password (passphrase).</small>
+            <small class="form-text">Please provide a password with the minimum length of 16.</small>
         </div>
 
         <button type="submit" class="btn btn-primary">Sign up</button>

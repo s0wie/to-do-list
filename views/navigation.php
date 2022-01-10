@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><?php echo $config['title']; ?></a>
+        <div style="margin-left: 1rem;">
+            <img src="../assets/images/logo-1.png" alt="stickywall-logo" width=200>
+        </div>
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="/index.php">Home</a>
@@ -34,7 +36,7 @@
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
                 <?php else : ?>
-                    <a href="/register.php" class="nav-link">Sign up</a>
+                    <a href="/register.php" class="btn btn-primary">Get started</a>
                 <?php endif; ?>
             </li>
         </ul>

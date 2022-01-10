@@ -1,4 +1,28 @@
-/* In this file you can add your custom styles. */
+/* GENERAL */
+:root {
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  --blue: #0275d8;
+}
+
+body {
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    147deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(248, 249, 250, 1) 72%
+  );
+}
+
+/* NAVBAR */
+.navbar {
+  margin-right: 1rem;
+}
+.nav-link {
+  margin-right: 1rem;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -53,9 +77,6 @@
   align-items: center;
 }
 
-hr {
-  margin-right: 2rem;
-}
 /* TASKS */
 .task-title {
   font-weight: 500;
@@ -100,7 +121,61 @@ hr {
 
 .show-details {
   font-size: small;
+}
+
+/* INDEX PAGE */
+
+.index-form div {
+  display: flex;
+  box-shadow: var(--shadow);
+}
+
+.index-form label {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.index-form input,
+.index-form button {
+  border-radius: 0;
+}
+.index-task {
+  display: flex;
+  align-items: center;
   margin: 1rem;
+}
+
+.index-task div {
+  margin-left: 1rem;
+}
+
+.index-article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5rem;
+}
+
+.index-section {
+  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-card {
+  padding: 2rem;
+  max-width: 500px;
+}
+
+/* SECTIONS */
+.create-list {
+  margin-bottom: 2rem;
+}
+.create-list-form {
+  display: inline;
+}
+.create-list-buttons {
+  display: inline;
 }
 @media (min-width: 800px) {
   .grid-container {
@@ -116,8 +191,6 @@ hr {
   .card:hover {
     transform: scale(105%);
     z-index: 2;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
-      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
-      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+    box-shadow: var(--shadow);
   }
 }

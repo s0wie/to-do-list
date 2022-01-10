@@ -6,32 +6,6 @@ declare(strict_types=1); ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
 
 <article>
-    <h1>Your tasks</h1>
-    <ul>
-        <?php foreach ($tasks as $task) : ?>
-            <li style="display: flex">
-                <form action="/app/tasks/checkbox.php" method="post" name="thisform<?php echo $task['id'] ?>">
-                    <input type="hidden" value="<?= $task['id'] ?>" name="id" />
-                    <!-- https://stackoverflow.com/questions/17660012/how-to-auto-submit-a-checkbox -->
-                    <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox" <?php if ($task['completed'] == 1) {
-                                                                                                                                    echo "checked";
-                                                                                                                                }  ?>>
-
-                    <!-- <?php var_dump($task); ?> -->
-                </form>
-
-                <?php echo $task['title'], $task['description'], $task['deadline']; ?>
-                <!-- EDIT BUTTON -->
-                <form action="/edit-tasks.php" method="post">
-                    <input type="hidden" value="<?= $task['id'] ?>" name="id" />
-                    <button type="submit">EDIT
-                    </button>
-                </form>
-            </li>
-
-        <?php endforeach ?>
-
-    </ul>
     <h2>Create a task</h2>
     <form action="app/tasks/store.php" method="post" enctype="multipart/form-data">
 
