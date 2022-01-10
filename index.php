@@ -29,7 +29,7 @@
         <section>
             <!-- NOTE WITH INFO-->
             <div class="card index-card">
-                <h3 class="task-title text-primary">Why stickywall?</h3>
+                <h3 class="task-title text-primary kavivanar">Why stickywall?</h3>
                 <div class="index-task">
                     <input type="checkbox" checked>
                     <div class="task-title">Create fast notes with tasks</div>

@@ -12,4 +12,24 @@ details.addEventListener('click', () =>
   })
 );
 
-// NEW
+// Code below does not work, I don't understand why
+
+// details.addEventListener('click', () =>
+//   descriptions.forEach((description) => {
+//     description.classList.toggle('show');
+//   })
+// );
+
+// ADD TASK BY DOUBLE CLICKING CARD
+const cards = document.querySelectorAll('.card');
+const forms = document.querySelectorAll('.add-task-form');
+
+cards.forEach((card) => {
+  card.addEventListener('dblclick', submitForm);
+});
+
+function submitForm() {
+  forms.forEach((form) => {
+    form.submit();
+  });
+}

@@ -96,9 +96,10 @@ declare(strict_types=1); ?>
                     </div>
                     <!-- ADD TASK AND SHOW DETAILS BUTTON -->
                     <div class="bottom-card">
-                        <form action="/tasks.php">
-                            <input type="hidden" value="<?php $list['id'] ?>">
-                            <button class="add-task btn add-class-container">
+                        <form class="add-task-form" action="/tasks.php" method="POST">
+                            <label for="list-id-add"></label>
+                            <input type="hidden" name="list-id-add" id="list-id-add" value="<?php echo $list['id'] ?>">
+                            <button type="submit" class="add-task btn add-class-container">
                                 +
                                 <span class="tooltip-text">Add a task</span>
                             </button>

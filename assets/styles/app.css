@@ -16,6 +16,14 @@ body {
   );
 }
 
+.kavivanar {
+  font-family: 'Kavivanar', cursive;
+}
+
+.show {
+  display: block;
+}
+
 /* NAVBAR */
 .navbar {
   margin-right: 1rem;

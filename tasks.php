@@ -6,6 +6,7 @@ declare(strict_types=1); ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
 
 <article>
+    <h1><?php var_dump($_POST['list-id-add']); ?></h1>
     <h2>Create a task</h2>
     <form action="app/tasks/store.php" method="post" enctype="multipart/form-data">
 
@@ -28,11 +29,15 @@ declare(strict_types=1); ?>
             <label for="list">List</label>
             <select class="form-select" name="list" id="list">
                 <?php foreach ($lists as $list) : ?>
-                    <option value="<?php echo $list['id'] ?>"><?php echo $list['title']; ?></option>
+                    <option value="<?php echo $list['id'] ?>" <?php if ($_POST['list-id-add'] == $list['id']) {
+                                                                    echo "selected";
+                                                                } ?>><?php echo $list['title'];
+                                                                        var_dump($list['id']);
+                                                                        var_dump($_POST['list-id-add']); ?></option>
                 <?php endforeach ?>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Sign up</button>
+        <button type="submit" class="btn btn-primary">Add task</button>
     </form>
 </article>
 
