@@ -31,6 +31,7 @@ declare(strict_types=1); ?>
         <div class="grid-container">
             <?php foreach ($lists as $list) : ?>
                 <div class="card" ondblclick="thisform<?php echo $list['id'] ?>.submit();">
+                    <!-- CARD TOP -->
                     <div class="top-card">
                         <h5 class="card-title font-kavivanar text-primary"><?php echo $list['title']; ?></h5>
                         <!-- DELETE BUTTON -->

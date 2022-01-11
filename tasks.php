@@ -6,6 +6,9 @@ declare(strict_types=1); ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
 
 <article>
+    <h1><?php if (isset($_POST['list-id-add'])) {
+            var_dump($_POST['list-id-add']);
+        } ?></h1>
     <h2>Create a task</h2>
     <form action="app/tasks/store.php" method="post" enctype="multipart/form-data">
 
@@ -16,9 +19,7 @@ declare(strict_types=1); ?>
         </div>
         <div class="mb-3">
             <label for="deadline">Deadline</label>
-            <input class="form-control" type="date" name="deadline" id="deadline" placeholder="date" value="<?php if (isset($_POST['today-date'])) {
-                                                                                                                echo "20" . date('y-m-d');
-                                                                                                            } ?>">
+            <input class="form-control" type="date" name="deadline" id="deadline" placeholder="date">
             <small class="form-text">Add deadline.</small>
         </div>
         <div class="mb-3">

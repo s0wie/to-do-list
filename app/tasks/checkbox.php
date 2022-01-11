@@ -25,8 +25,4 @@ if (isset($_POST['checkbox'])) {
     $statement->execute();
 }
 
-if (isset($_POST['today'])) {
-    redirect('/index.php');
-} else {
-    redirect('/lists.php');
-}
+redirect('/lists.php');
