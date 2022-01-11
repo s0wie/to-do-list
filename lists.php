@@ -9,18 +9,22 @@ declare(strict_types=1); ?>
 <article>
     <!-- CREATE LIST -->
     <section class="create-list">
-        <h2>Create a new sticky note</h2>
-        <form action="app/tasks/store.php" method="post" enctype="multipart/form-data" class="create-list-form">
+        <div class="create-list-buttons-container">
+            <button class="btn btn-primary create-list-button">New sticky note</button>
+            <button class="btn btn-secondary show-details">show details</button>
+        </div>
+        <div class="create-list-form hidden">
+            <form action="app/tasks/store.php" method="post" enctype="multipart/form-data" class="create-list-form">
 
-            <div class="mb-3">
-                <label for="list-title">Write a nice title down below!</label>
-                <input class="form-control" type="text" name="list-title" id="list-title" placeholder="Enter your title here (optional)">
-            </div>
-            <div class="create-list-buttons">
-                <button type="submit" class="btn btn-primary">Add list</button>
-            </div>
-        </form>
-        <button class="btn show-details">show details</button>
+                <div class="mb-3">
+                    <label for="list-title">Write a nice title down below!</label>
+                    <input class="form-control" type="text" name="list-title" id="list-title" placeholder="Enter your title here (optional)">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-warning">Add</button>
+                </div>
+            </form>
+        </div>
     </section>
     <!-- WALL OF LISTS -->
     <section>
@@ -107,19 +111,6 @@ declare(strict_types=1); ?>
                     </div>
                 </div>
             <?php endforeach ?>
-            <div class="card bg-white">
-                <h2>Create a sticky note</h2>
-                <form action="app/tasks/store.php" method="post" enctype="multipart/form-data" class="create-list-form">
-
-                    <div class="mb-3">
-                        <label for="list-title">List title</label>
-                        <input class="form-control" type="text" name="list-title" id="list-title">
-                    </div>
-                    <div class="create-list-buttons">
-                        <button type="submit" class="btn btn-primary">Add list</button>
-                    </div>
-                </form>
-            </div>
         </div>
 </article>
 

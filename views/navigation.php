@@ -5,6 +5,9 @@
         </div>
         <ul class="navbar-nav">
             <li class="nav-item">
+                <a class="nav-link" href="/index.php">Home</a>
+            </li>
+            <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
                     <a class="nav-link" href="/account.php"><img src="/app/database/uploads/<?php echo $_SESSION['user']['image_url']; ?>" alt="" width=20>My account</a>
                 <?php else : ?>
@@ -15,9 +18,6 @@
                     <a class="nav-link" href="/lists.php">Lists</a>
                 <?php else : ?>
                 <?php endif; ?>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/index.php">Home</a>
             </li>
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
