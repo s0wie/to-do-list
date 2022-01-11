@@ -20,7 +20,9 @@ body {
   font-family: 'Kavivanar', cursive;
 }
 
-.font-vietnam {
+.font-vietnam,
+form label,
+button {
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 
