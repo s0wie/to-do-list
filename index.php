@@ -19,7 +19,7 @@
             </details>
         </div>
         <div>
-            <div class="card" style=""></div>
+            <div class="card"></div>
         </div>
 
     <?php else : ?>
