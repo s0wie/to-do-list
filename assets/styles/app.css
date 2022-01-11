@@ -24,8 +24,8 @@ body {
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-.show {
-  display: block;
+.hidden {
+  display: none;
 }
 
 /* NAVBAR */
@@ -96,7 +96,7 @@ body {
 
 .task-description {
   font-weight: 300;
-  display: none;
+  /* display: none; */
 }
 
 .task-deadline {

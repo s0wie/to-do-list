@@ -1,24 +1,14 @@
 // TOGGLE SHOWING DETAILS
 const descriptions = document.querySelectorAll('.task-description');
-const details = document.querySelector('.show-details');
+const details = document.querySelector('.show-details'); // The button that says "show details"
 
-details.addEventListener('click', () =>
+details.addEventListener('click', toggleHidden);
+
+function toggleHidden() {
   descriptions.forEach((description) => {
-    if (description.style.display === 'none') {
-      description.style.display = 'block';
-    } else {
-      description.style.display = 'none';
-    }
-  })
-);
-
-// Code below does not work, I don't understand why
-
-// details.addEventListener('click', () =>
-//   descriptions.forEach((description) => {
-//     description.classList.toggle('show');
-//   })
-// );
+    description.classList.toggle('hidden');
+  });
+}
 
 // ADD TASK BY DOUBLE CLICKING CARD DOES NOT WORK EITHER
 // const cards = document.querySelectorAll('.card');

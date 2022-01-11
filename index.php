@@ -9,14 +9,19 @@
                 &#127379;
                 &#128197;
             </h1>
-            <p>To the right we've collected everything you need to do today.
-            </p>
-            <p>Don't have anything to do?</p>
-            <button>Create a task for today</button>
-            <p>or</p>
-            <button>Create a new sticky</button>
+            <details>
+                <p>To the right we've collected everything you need to do today.
+                </p>
+                <p>Don't have anything to do?</p>
+                <button>Create a task for today</button>
+                <p>or</p>
+                <button>Create a new sticky</button>
+            </details>
         </div>
-        <img src="/app/database/uploads/<?php echo $_SESSION['user']['image_url']; ?>" alt="">
+        <div>
+            <div class="card" style=""></div>
+        </div>
+
     <?php else : ?>
         <section class="index-section">
             <div>

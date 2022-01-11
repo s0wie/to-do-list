@@ -29,7 +29,7 @@ declare(strict_types=1); ?>
                 <div class="card" ondblclick="thisform<?php echo $list['id'] ?>.submit();">
                     <!-- CARD TOP -->
                     <div class="top-card">
-                        <h5 class="card-title"><?php echo $list['title']; ?></h5>
+                        <h5 class="card-title font-kavivanar text-primary"><?php echo $list['title']; ?></h5>
                         <!-- DELETE BUTTON -->
                         <form action="/app/tasks/delete.php" method="POST">
                             <input name="list-id" type="hidden" value="<?= $list['id'] ?>">
@@ -55,7 +55,7 @@ declare(strict_types=1); ?>
                                             <!-- TASKS DISPLAY-->
                                             <div class=" <?= ($task['completed'] == 1) ? "task-checked" : "" ?>">
                                                 <div class="task-title"><?= $task['title'] ?> </div>
-                                                <p class="task-description"><?= $task['description'] ?></p>
+                                                <p class="task-description hidden"><?= $task['description'] ?></p>
                                                 <small class="<?php if ($task['completed'] == 0) {
                                                                     echo "task-deadline";
                                                                 }  ?>">

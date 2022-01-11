@@ -6,7 +6,7 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
-                    <a class="nav-link" href="/account.php">My account</a>
+                    <a class="nav-link" href="/account.php"><img src="/app/database/uploads/<?php echo $_SESSION['user']['image_url']; ?>" alt="" width=20>My account</a>
                 <?php else : ?>
                 <?php endif; ?>
             </li>
