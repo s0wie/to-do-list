@@ -5,7 +5,7 @@ require __DIR__ . '/../autoload.php';
 // HANDLING PROFILE PICTURE
 if (isset($_FILES['avatar'])) {
     $avatar = $_FILES['avatar'];
-    $avatarDestination = __DIR__ . '/../database/images/' . date("Y-m-d H:i:s") . $avatar['name'];
+    $avatarDestination = __DIR__ . '/../database/uploads/' . date("Y-m-d H:i:s") . $avatar['name'];
     move_uploaded_file($avatar['tmp_name'], $avatarDestination);
 
     $imageUrl = date("Y-m-d H:i:s") . $avatar['name'];
@@ -17,6 +17,7 @@ if (isset($_FILES['avatar'])) {
     $statement->execute();
 
     $_SESSION['user']['image_url'] = $imageUrl;
+    $_SESSION['message'] = "You've successfully uploaded a new profile picture!";
 
     // TO DO: VALIDATE TYPE AND SIZE
 }
@@ -31,8 +32,8 @@ if (isset($_POST['email'])) {
     $statement->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
     $statement->execute();
 
-    $_SESSION['changedEmail'] = "Your email is now changed.";
     $_SESSION['user']['email'] = $newEmail;
+    $_SESSION['message'] = "Your email is now changed.";
 }
 
 // HANDLING PASSWORD CHANGE
@@ -46,6 +47,21 @@ if (isset($_POST['password'])) {
     $statement->execute();
 
     $_SESSION['changedPassword'] = "Your password is now changed.";
+    $_SESSION['message'] = "Your password is now changed.";
+}
+
+// HANDLING USERNAME CHANGE
+if (isset($_POST['username'])) {
+    $newUsername = trim(filter_var($_POST['username'], FILTER_SANITIZE_EMAIL));
+
+    $query = ("UPDATE users SET username = :new WHERE id = :id");
+    $statement = $database->prepare($query);
+    $statement->bindParam(':new', $newUsername, PDO::PARAM_STR);
+    $statement->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
+    $statement->execute();
+
+    $_SESSION['user']['username'] = $newUsername;
+    $_SESSION['message'] = "Your username is now changed.";
 }
 
 redirect("/account.php");
