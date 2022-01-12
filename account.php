@@ -1,10 +1,10 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
-
 <article>
     <section>
         <p class="text-success"><?php if (isset($_SESSION['message'])) {
                                     echo $_SESSION['message'];
+                                    unset($_SESSION['message']);
                                 } ?></p>
     </section>
     <section class="bg-white p-3 border">
