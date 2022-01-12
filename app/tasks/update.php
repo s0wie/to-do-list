@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// In this file we delete posts in the database.
 // UPPDATE TASKS
 if (isset($_POST['title'], $_POST['description'], $_POST['deadline'])) {
     $newTitle = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
@@ -21,4 +20,8 @@ if (isset($_POST['title'], $_POST['description'], $_POST['deadline'])) {
     $statement->execute();
 }
 
-redirect('/tasks.php');
+if (isset($_POST['today'])) {
+    redirect('/index.php');
+} else {
+    redirect('/lists.php');
+}

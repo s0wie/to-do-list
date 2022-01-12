@@ -27,4 +27,8 @@ if (isset($_POST['list-id'])) {
     $statement2->execute();
 }
 
-redirect('/lists.php');
+if (isset($_POST['today'])) {
+    redirect('/index.php');
+} else {
+    redirect('/lists.php');
+}

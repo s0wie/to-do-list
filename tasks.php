@@ -8,6 +8,9 @@ declare(strict_types=1); ?>
 <article>
     <h2>Create a task</h2>
     <form action="app/tasks/store.php" method="post" enctype="multipart/form-data">
+        <?php if (isset($_POST['today-date'])) : ?>
+            <input type="hidden" name="today-date" value="today">
+        <?php endif ?>
 
         <div class="mb-3">
             <label for="title">Task title</label>

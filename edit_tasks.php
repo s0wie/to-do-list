@@ -14,6 +14,9 @@ declare(strict_types=1); ?>
 } ?>
 
 <form action="app/tasks/update.php" method="post" enctype="multipart/form-data">
+    <?php if (isset($_POST['today'])) : ?>
+        <input type="hidden" name="today" value="today">
+    <?php endif ?>
     <input type="hidden" value="<?= $id ?>" name="id">
     <div class="mb-3">
         <label for="title">Title </label>
