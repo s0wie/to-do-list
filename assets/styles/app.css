@@ -30,6 +30,10 @@ button {
   display: none;
 }
 
+.display-flex {
+  display: flex;
+}
+
 /* NAVBAR */
 .navbar {
   margin-right: 1rem;
@@ -50,6 +54,7 @@ button {
 
 .card {
   min-height: 15rem;
+  max-height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -59,6 +64,10 @@ button {
   transition-duration: 0.2s;
 }
 
+.card-content {
+  height: 30rem;
+  overflow: auto;
+}
 .top-card,
 .bottom-card {
   display: flex;
@@ -89,6 +98,18 @@ button {
   margin-right: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.list-title-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-title-edit form {
+  margin-left: 1rem;
+  opacity: 0.5;
+  width: 0.5rem;
 }
 
 /* TASKS */

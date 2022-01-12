@@ -33,15 +33,16 @@ declare(strict_types=1); ?>
         <input class="form-control" type="date" name="deadline" id="deadline" value="<?php echo $task['deadline'] ?>">
     </div>
 
-    <button>submit</button>
+    <button class="btn btn-primary">Submit</button>
+    <!-- DELETE TASK BUTTON/FORM -->
+    <form action="/app/tasks/delete.php" method="post">
+        <input type="hidden" value="<?= $task['id'] ?>" name="id" />
+        <button type="submit" class="btn btn-danger"> Delete
+        </button>
+    </form>
 </form>
 
-<!-- DELETE TASK BUTTON/FORM -->
-<form action="/app/tasks/delete.php" method="post">
-    <input type="hidden" value="<?= $task['id'] ?>" name="id" />
-    <button type="submit" class="btn btn-danger"> DELETE
-    </button>
-</form>
+
 
 
 <?php require __DIR__ . '/views/footer.php'; ?>

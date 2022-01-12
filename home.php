@@ -1,11 +1,10 @@
 <div>
-    <h1>Welcome, <?php echo $_SESSION['user']['username']; ?>!</h1>
-    <p>To the right we've collected everything you need to do today.
-    </p>
-    <p>Don't have anything to do?</p>
-    <button class="btn btn-primary">Create a task for today</button>
-    <p>or</p>
-    <button class="btn btn-primary">Create a new sticky</button>
+    <p class="font-vietnam"><?= date('l jS \of F Y '); ?></p>
+    <h1 class="font-vietnam">Welcome, <?php echo $_SESSION['user']['username']; ?>!</h1>
+    <br>
+    <p class="font-vietnam">To the right we've collected everything you need to do today.</p>
+    <p class="font-vietnam">Don't have anything to do? Click the + sign to add a new task for today, or navigate to <b><a class="text-dark" href="/lists.php">LISTS</a></b> to make some sticky notes! </p>
+
 </div>
 <div>
     <div class="card">

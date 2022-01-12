@@ -18,10 +18,26 @@ if (isset($_POST['title'], $_POST['description'], $_POST['deadline'])) {
     $statement->bindParam(':newDeadline', $newDeadline, PDO::PARAM_STR);
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
     $statement->execute();
+
+    if (isset($_POST['today'])) {
+        redirect('/index.php');
+    } else {
+        redirect('/lists.php');
+    }
 }
 
-if (isset($_POST['today'])) {
-    redirect('/index.php');
-} else {
+
+// UPDATE LISTS
+
+if (isset($_POST['list-title'])) {
+    $newTitle = trim(filter_var($_POST['list-title'], FILTER_SANITIZE_STRING));
+    $id = $_POST['id'];
+
+    $query = ("UPDATE lists SET title = :newTitle WHERE id = :id");
+    $statement = $database->prepare($query);
+    $statement->bindParam(':newTitle', $newTitle, PDO::PARAM_STR);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+
     redirect('/lists.php');
 }
