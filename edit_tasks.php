@@ -2,6 +2,7 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
 
+<!-- Ändra, sätt i en funktion så det ej är logik här -->
 <?php if (isset($_POST['id'])) {
     $id = trim(filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT));
     $statement = $database->prepare('SELECT * FROM tasks WHERE id = :id');

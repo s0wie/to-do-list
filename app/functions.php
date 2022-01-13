@@ -8,7 +8,7 @@ function redirect(string $path)
     exit;
 }
 
-
+// Change name to getDaysLeft
 function daysLeft(string $deadline)
 {
     $todaysDate = date('y-m-d');
@@ -17,3 +17,6 @@ function daysLeft(string $deadline)
     $days = strtotime($deadlineDate) - strtotime($todaysDate);
     return abs($days / 86400);
 }
+
+// Add functions to check if user is online,
+// etc
