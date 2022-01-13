@@ -19,7 +19,8 @@ declare(strict_types=1); ?>
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" value="
             <?php
-            if (isset($_POST['email'])) : echo $_POST['email'];
+            if (isset($_POST['email'])) :
+                echo $_POST['email'];
             endif ?>
             " required>
             <small class="form-text">Please provide the your email address.</small>
