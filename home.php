@@ -21,11 +21,12 @@
                                         <input type="hidden" value="<?= $task['id'] ?>" name="id" />
                                         <input type="hidden" value="" name="today">
                                         <!-- https://stackoverflow.com/questions/17660012/how-to-auto-submit-a-checkbox -->
-                                        <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox" <?php
-                                                                                                                                                    if ($task['completed'] == 1) :
-                                                                                                                                                        echo "checked";
-                                                                                                                                                    endif;
-                                                                                                                                                    ?>>
+                                        <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox"
+                                        <?php
+                                        if ($task['completed'] == 1) :
+                                            echo "checked";
+                                        endif;
+                                        ?>>
                                     </form>
                                 </div>
                                 <!-- TASKS DISPLAY-->
