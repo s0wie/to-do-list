@@ -34,8 +34,10 @@
                     <a class="nav-link container border rounded bg-light" href="/account.php">
                         <?= $_SESSION['user']['username'] ?>
                         <img src="/app/database/uploads/
-                        <?php if (isset($_SESSION['user']['image_url'])) : echo $_SESSION['user']['image_url'];
-                        else : echo "default-avatar.png";
+                        <?php if (isset($_SESSION['user']['image_url'])) :
+                            echo $_SESSION['user']['image_url'];
+                        else :
+                            echo "default-avatar.png";
                         endif ?>" alt="" width=30 class="rounded-circle">
                     </a>
                 <?php else : ?>

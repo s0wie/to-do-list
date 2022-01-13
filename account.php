@@ -16,8 +16,10 @@
         </div>
         <div class="display-flex">
             <img src="/app/database/uploads/
-            <?php if (isset($_SESSION['user']['image_url'])) : echo $_SESSION['user']['image_url'];
-            else : echo "default-avatar.png";
+            <?php if (isset($_SESSION['user']['image_url'])) :
+                echo $_SESSION['user']['image_url'];
+            else :
+                echo "default-avatar.png";
             endif ?>" alt="" width=200 class="rounded-circle">
             <div class="container">
                 <h6 class="text-primary">Username</h6>

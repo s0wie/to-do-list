@@ -33,9 +33,11 @@ declare(strict_types=1); ?>
             <label for="list">List</label>
             <select class="form-select" name="list" id="list">
                 <?php foreach ($lists as $list) : ?>
-                    <option value="<?php echo $list['id'] ?>" <?php if (isset($_POST['list-id-add']) && $_POST['list-id-add'] == $list['id']) :
+                    <option value="<?php echo $list['id'] ?>" <?php
+                                                                if (isset($_POST['list-id-add']) && $_POST['list-id-add'] == $list['id']) :
                                                                     echo "selected";
-                                                                endif ?>>
+                                                                endif;
+                                                                ?>>
                         <?php echo $list['title']; ?>
                     </option>
                 <?php endforeach ?>
