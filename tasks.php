@@ -34,7 +34,7 @@ declare(strict_types=1); ?>
             <select class="form-select" name="list" id="list">
                 <?php foreach ($lists as $list) : ?>
                     <option value="<?php echo $list['id'] ?>"
-                    <?php
+                <?php
                     if (isset($_POST['list-id-add']) && $_POST['list-id-add'] == $list['id']) :
                         echo "selected";
                     endif;
