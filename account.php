@@ -16,7 +16,8 @@
         </div>
         <div class="display-flex">
             <img src="/app/database/uploads/
-            <?php if (isset($_SESSION['user']['image_url'])) :
+            <?php
+            if (isset($_SESSION['user']['image_url'])) :
                 echo $_SESSION['user']['image_url'];
             else :
                 echo "default-avatar.png";
