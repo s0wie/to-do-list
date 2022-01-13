@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1); ?>
+
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
@@ -64,18 +65,18 @@ declare(strict_types=1); ?>
                                                     <form action="/app/tasks/checkbox.php" method="post" class="checkbox-form" name="thisform<?php echo $task['id'] ?>">
                                                         <input type="hidden" value="<?= $task['id'] ?>" name="id" />
                                                         <!-- https://stackoverflow.com/questions/17660012/how-to-auto-submit-a-checkbox -->
-                                                        <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox" <?php if ($task['completed'] == 1) {
-                                                                                                                                                                        echo "checked";
-                                                                                                                                                                    }  ?>>
+                                                        <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox" <?php if ($task['completed'] == 1) : echo "checked";
+                                                                                                                                                                    endif; ?>>
                                                     </form>
                                                 </div>
                                                 <!-- TASKS DISPLAY-->
                                                 <div class=" <?= ($task['completed'] == 1) ? "task-checked" : "" ?>">
                                                     <div class="task-title"><?= $task['title'] ?> </div>
                                                     <p class="task-description hidden"><?= $task['description'] ?></p>
-                                                    <small class="<?php if ($task['completed'] == 0) {
-                                                                        echo "task-deadline";
-                                                                    }  ?>">
+                                                    <small class="
+                                                    <?php if ($task['completed'] == 0) :
+                                                        echo "task-deadline";
+                                                    endif ?>">
                                                         <?php
                                                         if (daysLeft($task['deadline']) != 18999 && daysLeft($task['deadline']) <= 14) :
                                                             echo daysLeft($task['deadline']) . " day(s) left!";

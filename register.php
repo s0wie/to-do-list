@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1); ?>
+
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 
@@ -16,8 +17,9 @@ declare(strict_types=1); ?>
         </div>
         <div class="mb-3">
             <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email" value="<?php if (isset($_POST['email'])) : echo $_POST['email'];
-                                                                                    endif ?>" required>
+            <input class="form-control" type="email" name="email" id="email" value="
+            <?php if (isset($_POST['email'])) : echo $_POST['email'];
+            endif ?>" required>
             <small class="form-text">Please provide the your email address.</small>
         </div>
 
