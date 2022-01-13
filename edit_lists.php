@@ -13,7 +13,7 @@ declare(strict_types=1); ?>
     $list = $statement->fetch(PDO::FETCH_ASSOC);
 } ?>
 
-<h1> <?php var_dump($id) ?></h1>
+<h3>Change list title</h3>
 <form action="app/tasks/update.php" method="post" enctype="multipart/form-data">
     <input type="hidden" value="<?= $id ?>" name="id">
     <div class="mb-3">

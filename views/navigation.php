@@ -5,7 +5,11 @@
         </div>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/index.php">Today</a>
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <a href="/index.php" class="nav-link">Today</a>
+                <?php else : ?>
+                    <a class="nav-link" href="/index.php">Home</a>
+                <?php endif ?>
             </li>
             <li class="nav-item">
                 <?php if (isset($_SESSION['user'])) : ?>
