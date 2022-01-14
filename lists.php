@@ -78,9 +78,9 @@
                                                         echo "task-deadline";
                                                     endif ?>">
                                                         <?php
-                                                        if (daysLeft($task['deadline']) != 18999 && daysLeft($task['deadline']) <= 14) :
-                                                            echo daysLeft($task['deadline']) . " day(s) left!";
-                                                        elseif (daysLeft($task['deadline']) != 18999 && $task['deadline'] != "") :
+                                                        if (getdaysLeft($task['deadline']) != 18999 && getdaysLeft($task['deadline']) <= 14) :
+                                                            echo getdaysLeft($task['deadline']) . " day(s) left!";
+                                                        elseif (getdaysLeft($task['deadline']) != 18999 && $task['deadline'] != "") :
                                                             echo "Due: " . $task['deadline'];
                                                         endif ?>
                                                     </small>

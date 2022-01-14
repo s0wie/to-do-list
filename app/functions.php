@@ -9,7 +9,7 @@ function redirect(string $path)
 }
 
 // Change name to getDaysLeft
-function daysLeft(string $deadline)
+function getdaysLeft(string $deadline)
 {
     $todaysDate = date('y-m-d');
     $deadlineDate = $deadline;
