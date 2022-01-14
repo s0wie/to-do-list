@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+// In this file, we update task status to the database
+
 // UPDATE CHECKBOX
 if (isset($_POST['checkbox'])) {
     $checkbox = 1;
