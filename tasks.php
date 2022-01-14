@@ -35,7 +35,7 @@
                 <?php foreach ($lists as $list) : ?>
                     <option value="<?php echo $list['id'] ?>"
                     <?php
-                    // If user creates a task by clicking on an existing list
+                    // If user creates a task by clicking on an existing list,
                     // this list is selected by default
                     if (isset($_POST['list-id-add']) && $_POST['list-id-add'] == $list['id']) :
                         echo "selected";

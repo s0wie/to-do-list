@@ -20,3 +20,14 @@ function getdaysLeft(string $deadline)
 
 // Add functions to check if user is online,
 // etc
+
+//FETCH LISTS IN ORDER TO DISPLAY AND EDIT SPECIFIC LISTS
+// function getListsForEdit(PDO $database) {
+// if (isset($_POST['list-id'])) :
+//     $id = trim(filter_var($_POST['list-id'], FILTER_SANITIZE_NUMBER_INT));
+//     $statement = $database->prepare('SELECT * FROM lists WHERE id = :id');
+//     $statement->bindParam(':id', $id, PDO::PARAM_INT);
+//     $statement->execute();
+//     return $statement->fetch(PDO::FETCH_ASSOC);
+// endif;
+// }

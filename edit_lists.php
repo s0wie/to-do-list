@@ -1,6 +1,8 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
+<?php //$list = getListsForEdit($database); ?>
+
 
 <h3>Change list title</h3>
 <form action="app/tasks/update.php" method="post" enctype="multipart/form-data">
