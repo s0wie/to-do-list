@@ -13,7 +13,7 @@
         <div class="list-container">
             <ul>
                 <?php foreach ($tasks as $task) : ?>
-                    <?php if (daysLeft($task['deadline']) == 0) : ?>
+                    <?php if (getdaysLeft($task['deadline']) == 0) : ?>
                         <div class="li">
                             <div class="list-item">
                                 <div>

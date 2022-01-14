@@ -1,7 +1,7 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
-<?php require __DIR__ . '/app/tasks/data.php'; ?>
+<?php require __DIR__ . '/app/data.php'; ?>
 
 <article>
     <!-- CREATE LIST -->
@@ -34,7 +34,7 @@
                             <div class="list-title-edit">
                                 <!-- EDIT BUTTON -->
                                 <form action="/edit_lists.php" method="post">
-                                    <input type="hidden" value="<?= $list['id'] ?>" name="id" />
+                                    <input type="hidden" value="<?= $list['id'] ?>" name="list-id" />
                                     <button type="submit" class="btn">
                                         <svg width="20" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path class="edit-icon" fill-rule="evenodd" clip-rule="evenodd" d="M32.5858 4.58579C33.3668 3.80474 34.6332 3.80474 35.4142 4.58579L43.4142 12.5858C44.1953 13.3668 44.1953 14.6332 43.4142 15.4142L17.4142 41.4142C17.0391 41.7893 16.5304 42 16 42H8C6.89543 42 6 41.1046 6 40V32C6 31.4696 6.21071 30.9609 6.58579 30.5858L26.5854 10.5862L32.5858 4.58579ZM28 14.8284L10 32.8284V38H15.1716L33.1716 20L28 14.8284ZM36 17.1716L30.8284 12L34 8.82843L39.1716 14L36 17.1716Z" fill="#999999" />
@@ -92,7 +92,7 @@
                                             <div class="list-buttons">
                                                 <!-- EDIT BUTTON -->
                                                 <form action="/edit_tasks.php" method="post">
-                                                    <input type="hidden" value="<?= $task['id'] ?>" name="id" />
+                                                    <input type="hidden" value="<?= $task['id'] ?>" name="task-id" />
                                                     <button type="submit" class="btn">
                                                         <svg width="20" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path class="edit-icon" fill-rule="evenodd" clip-rule="evenodd" d="M32.5858 4.58579C33.3668 3.80474 34.6332 3.80474 35.4142 4.58579L43.4142 12.5858C44.1953 13.3668 44.1953 14.6332 43.4142 15.4142L17.4142 41.4142C17.0391 41.7893 16.5304 42 16 42H8C6.89543 42 6 41.1046 6 40V32C6 31.4696 6.21071 30.9609 6.58579 30.5858L26.5854 10.5862L32.5858 4.58579ZM28 14.8284L10 32.8284V38H15.1716L33.1716 20L28 14.8284ZM36 17.1716L30.8284 12L34 8.82843L39.1716 14L36 17.1716Z" fill="#999999" />

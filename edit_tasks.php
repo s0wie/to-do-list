@@ -2,14 +2,7 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
 
-<!-- Ändra, sätt i en funktion så det ej är logik här -->
-<?php if (isset($_POST['id'])) {
-    $id = trim(filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT));
-    $statement = $database->prepare('SELECT * FROM tasks WHERE id = :id');
-    $statement->bindParam(':id', $id, PDO::PARAM_INT);
-    $statement->execute();
-    $task = $statement->fetch(PDO::FETCH_ASSOC);
-} ?>
+<!-- Change TASKS -->
 
 <form action="app/tasks/update.php" method="post" enctype="multipart/form-data">
     <?php if (isset($_POST['today'])) : ?>
