@@ -33,12 +33,13 @@
                 <?php if (isset($_SESSION['user'])) : ?>
                     <a class="nav-link container border rounded bg-light" href="/account.php">
                         <?= $_SESSION['user']['username'] ?>
-                        <img src="/app/database/uploads/
+                        <img src="
                         <?php if (isset($_SESSION['user']['image_url'])) :
-                            echo $_SESSION['user']['image_url'];
+                            echo "/app/database/uploads/" . $_SESSION['user']['image_url'];
                         else :
-                            echo "default-avatar.png";
+                            echo "/app/database/uploads/default-avatar.png";
                         endif ?>" alt="" width=30 class="rounded-circle">
+
                     </a>
                 <?php else : ?>
                 <?php endif; ?>

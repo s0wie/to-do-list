@@ -2,10 +2,13 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 <article>
     <section>
-        <p class="text-success"><?php if (isset($_SESSION['message'])) {
-                                    echo $_SESSION['message'];
-                                    unset($_SESSION['message']);
-                                } ?></p>
+        <p class="text-success">
+        <?php
+        if (isset($_SESSION['message'])) :
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+        endif; ?>
+        </p>
     </section>
     <section class="bg-white p-3 border">
         <div class="d-flex justify-content-md-between">
@@ -14,13 +17,13 @@
                 <a href="app/users/logout.php"><button class="btn btn-warning">Log out</button></a>
             </div>
         </div>
-        <div class="display-flex">
-            <img src="/app/database/uploads/
+        <div class="d-flex">
+            <img src="
             <?php
             if (isset($_SESSION['user']['image_url'])) :
-                echo $_SESSION['user']['image_url'];
+                echo "/app/database/uploads/" . $_SESSION['user']['image_url'];
             else :
-                echo "default-avatar.png";
+                echo "/app/database/uploads/default-avatar.png";
             endif ?>" alt="" width=200 class="rounded-circle">
             <div class="container">
                 <h6 class="text-primary">Username</h6>

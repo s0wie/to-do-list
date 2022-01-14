@@ -3,7 +3,7 @@
 require __DIR__ . '/../autoload.php';
 
 // HANDLING PROFILE PICTURE
-if (isset($_FILES['avatar'])) {
+if (isset($_FILES['avatar'])) :
     $avatar = $_FILES['avatar'];
     $avatarDestination = __DIR__ . '/../database/uploads/' . date("Y-m-d H:i:s") . $avatar['name'];
     move_uploaded_file($avatar['tmp_name'], $avatarDestination);
@@ -20,7 +20,7 @@ if (isset($_FILES['avatar'])) {
     $_SESSION['message'] = "You've successfully uploaded a new profile picture!";
 
     // TO DO: VALIDATE TYPE AND SIZE
-}
+endif;
 
 // HANDLING EMAIL CHANGE
 if (isset($_POST['email'])) {
