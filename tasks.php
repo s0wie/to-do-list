@@ -16,9 +16,12 @@
         </div>
         <div class="mb-3">
             <label for="deadline">Deadline</label>
-            <input class="form-control" type="date" name="deadline" id="deadline" placeholder="date" value="<?php if (isset($_POST['today-date'])) {
-                                                                                                                echo "20" . date('y-m-d');
-                                                                                                            } ?>">
+            <input class="form-control" type="date" name="deadline" id="deadline" placeholder="date" value="
+            <?php
+            if (isset($_POST['today-date'])) :
+                echo "20" . date('y-m-d');
+            endif ?>
+            ">
             <small class="form-text">Add deadline.</small>
         </div>
         <div class="mb-3">

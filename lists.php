@@ -61,7 +61,9 @@
                                                     <form action="/app/tasks/checkbox.php" method="post" class="checkbox-form" name="thisform<?php echo $task['id'] ?>">
                                                         <input type="hidden" value="<?= $task['id'] ?>" name="id" />
                                                         <!-- https://stackoverflow.com/questions/17660012/how-to-auto-submit-a-checkbox -->
-                                                        <input type="checkbox" onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();" name="checkbox"
+                                                        <input type="checkbox"
+                                                        onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();"
+                                                        name="checkbox"
                                                         <?php
                                                         if ($task['completed'] == 1) :
                                                             echo "checked";
@@ -78,6 +80,7 @@
                                                         echo "task-deadline";
                                                     endif ?>">
                                                         <?php
+                                                        // If a task has no deadline, the function will return 18999, hence why it's adressed here
                                                         if (getdaysLeft($task['deadline']) != 18999 && getdaysLeft($task['deadline']) <= 14) :
                                                             echo getdaysLeft($task['deadline']) . " day(s) left!";
                                                         elseif (getdaysLeft($task['deadline']) != 18999 && $task['deadline'] != "") :
