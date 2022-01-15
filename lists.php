@@ -30,7 +30,6 @@
                 <div class="card" ondblclick="thisform<?php echo $list['id'] ?>.submit();">
                     <div class="card-content">
                         <div class="top-card">
-                            <!-- TITLE AND EDIT BUTTON -->
                             <div class="list-title-edit">
                                 <!-- EDIT BUTTON -->
                                 <form action="/edit_lists.php" method="post">
@@ -80,10 +79,10 @@
                                                         echo "task-deadline";
                                                     endif ?>">
                                                         <?php
-                                                        // If a task has no deadline, the function will return 18999, hence why it's adressed here
-                                                        if (getdaysLeft($task['deadline']) != 18999 && getdaysLeft($task['deadline']) <= 14) :
+                                                        // If a task has no deadline, the function will return a negative number
+                                                        if (getdaysLeft($task['deadline']) > 0 && getdaysLeft($task['deadline']) <= 14) :
                                                             echo getdaysLeft($task['deadline']) . " day(s) left!";
-                                                        elseif (getdaysLeft($task['deadline']) != 18999 && $task['deadline'] != "") :
+                                                        elseif (getdaysLeft($task['deadline']) > 0 && $task['deadline'] != "") :
                                                             echo "Due: " . $task['deadline'];
                                                         endif ?>
                                                     </small>

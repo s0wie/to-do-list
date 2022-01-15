@@ -15,7 +15,7 @@ function getdaysLeft(string $deadline)
     $deadlineDate = $deadline;
 
     $days = strtotime($deadlineDate) - strtotime($todaysDate);
-    return abs($days / 86400);
+    return $days / 86400;
 }
 
 // Add functions to check if user is online,
