@@ -33,7 +33,7 @@
             <label for="list">List</label>
             <select class="form-select" name="list" id="list">
                 <?php foreach ($lists as $list) : ?>
-                    <option value="<?php echo $list['id'] ?>"
+                    <option value="<?= $list['id'] ?>"
                     <?php
                     // If user creates a task by clicking on an existing list,
                     // this list is selected by default
@@ -41,7 +41,7 @@
                         echo "selected";
                     endif;
                     ?>>
-                        <?php echo $list['title']; ?>
+                        <?= $list['title']; ?>
                     </option>
                 <?php endforeach ?>
             </select>

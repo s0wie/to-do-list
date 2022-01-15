@@ -9,7 +9,7 @@
     <input type="hidden" value="<?= $id ?>" name="id">
     <div class="mb-3">
         <label for="list-title">Title </label>
-        <input class="form-control" type="name" name="list-title" id="list-title" value="<?php echo $list['title'] ?>">
+        <input class="form-control" type="name" name="list-title" id="list-title" value="<?= $list['title'] ?>">
     </div>
     <button class="btn btn-primary">Submit</button>
 </form>

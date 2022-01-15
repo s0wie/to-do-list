@@ -67,7 +67,7 @@
         <form action="app/users/update.php" method="post" class="d-flex justify-content-md-between mt-4 mb-4">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input class="form-control" type="email" name="email" id="email" placeholder="<?php echo $_SESSION['user']['email']; ?>" required>
+                <input class="form-control" type="email" name="email" id="email" placeholder="<?= $_SESSION['user']['email']; ?>" required>
                 <small>
                     <?php if (isset($_SESSION['changedEmail'])) :
                         echo $_SESSION['changedEmail'];

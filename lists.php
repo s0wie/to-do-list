@@ -4,7 +4,7 @@
 <?php require __DIR__ . '/app/data.php'; ?>
 
 <article>
-    <!-- CREATE LIST -->
+    <!-- CREATE LIST/NOTE -->
     <section class="create-list">
         <div class="create-list-buttons-container">
             <button class="btn btn-primary create-list-button">New sticky note</button>
@@ -23,15 +23,15 @@
             </form>
         </div>
     </section>
-    <!-- WALL OF LISTS -->
+    <!-- WALL OF LISTS/NOTES -->
     <section>
         <div class="grid-container">
             <?php foreach ($lists as $list) : ?>
-                <div class="card" ondblclick="thisform<?php echo $list['id'] ?>.submit();">
+                <div class="card" ondblclick="thisform<?= $list['id'] ?>.submit();">
                     <div class="card-content">
                         <div class="top-card">
                             <div class="list-title-edit">
-                                <!-- EDIT BUTTON -->
+                                <!-- EDIT BUTTON FOR LIST TITLE -->
                                 <form action="/edit_lists.php" method="post">
                                     <input type="hidden" value="<?= $list['id'] ?>" name="list-id" />
                                     <button type="submit" class="btn">
@@ -40,10 +40,10 @@
                                         </svg>
                                     </button>
                                 </form>
-                                <h5 class="card-title font-kavivanar text-primary"><?php echo $list['title']; ?>
+                                <h5 class="card-title font-kavivanar text-primary"><?= $list['title']; ?>
                                 </h5>
                             </div>
-                            <!-- DELETE BUTTON -->
+                            <!-- DELETE BUTTON FOR LIST/NOTE -->
                             <form action="/app/tasks/delete.php" method="POST">
                                 <input name="list-id" type="hidden" value="<?= $list['id'] ?>">
                                 <button class="btn">X</button>
@@ -61,7 +61,7 @@
                                                         <input type="hidden" value="<?= $task['id'] ?>" name="id" />
                                                         <!-- https://stackoverflow.com/questions/17660012/how-to-auto-submit-a-checkbox -->
                                                         <input type="checkbox"
-                                                        onclick="document.forms.thisform<?php echo $task['id'] ?>.submit();"
+                                                        onclick="document.forms.thisform<?= $task['id'] ?>.submit();"
                                                         name="checkbox"
                                                         <?php
                                                         if ($task['completed'] == 1) :
@@ -89,7 +89,7 @@
                                                 </div>
                                             </div>
                                             <div class="list-buttons">
-                                                <!-- EDIT BUTTON -->
+                                                <!-- EDIT BUTTON FOR TASK -->
                                                 <form action="/edit_tasks.php" method="post">
                                                     <input type="hidden" value="<?= $task['id'] ?>" name="task-id" />
                                                     <button type="submit" class="btn">
@@ -117,9 +117,9 @@
                     </div>
                     <!-- ADD TASK AND SHOW DETAILS BUTTON -->
                     <div class="bottom-card">
-                        <form class="add-task-form" action="/tasks.php" method="POST" name="thisform<?php echo $list['id'] ?>">
+                        <form class="add-task-form" action="/tasks.php" method="POST" name="thisform<?= $list['id'] ?>">
                             <label for="list-id-add"></label>
-                            <input type="hidden" name="list-id-add" id="list-id-add" value="<?php echo $list['id'] ?>">
+                            <input type="hidden" name="list-id-add" id="list-id-add" value="<?= $list['id'] ?>">
                             <button type="submit" class="add-task btn add-class-container">
                                 +
                                 <span class="tooltip-text">Add a task</span>

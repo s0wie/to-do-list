@@ -11,17 +11,17 @@
     <input type="hidden" value="<?= $id ?>" name="id">
     <div class="mb-3">
         <label for="title">Title </label>
-        <input class="form-control" type="name" name="title" id="title" value="<?php echo $task['title'] ?>">
+        <input class="form-control" type="name" name="title" id="title" value="<?= $task['title'] ?>">
     </div>
     <div class="mb-3">
         <label for="tasks">Description</label>
-        <input class="form-control" type="description" name="description" id="description" value="<?php echo $task['description'] ?>">
+        <input class="form-control" type="description" name="description" id="description" value="<?= $task['description'] ?>">
         <small class="form-text">Please fill in a description for your task</small>
 
     </div>
     <div class="mb-3">
         <label for="deadline">Deadline</label>
-        <input class="form-control" type="date" name="deadline" id="deadline" value="<?php echo $task['deadline'] ?>">
+        <input class="form-control" type="date" name="deadline" id="deadline" value="<?= $task['deadline'] ?>">
     </div>
 
     <button class="btn btn-primary">Submit</button>
