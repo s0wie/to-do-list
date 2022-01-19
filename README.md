@@ -1,12 +1,12 @@
-INSERT MANDATORY GIF
+![Gif of to-do-list that says work work work!](https://media.giphy.com/media/HYYbdk46gUzrgWi1Iz/giphy.gif)
 
 # Project Title
 
-Text about the project and why it exists. This would also be a great place to link the project online.
+This is the PHP winter project @yrgo. I made a to-do-list in the form of digital sticky notes where you can easily create tasks, edit tasks, delete them or even mark them as completed. All connected to a SQLite database. 
 
 # Installation
 
-Add the installation instructions.
+Clone the repository. Set up a local server. Create your own account, log in and create your notes!
 
 # Code Review
 
@@ -27,5 +27,5 @@ Code review written by [Jennifer Andersson](https://github.com/JennAnd).
 
 Tested by the following people:
 
-1. Jane Doe
-2. John Doe
+1. Oliver Davis
+2. Emma Ramstedt
