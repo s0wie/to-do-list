@@ -124,8 +124,9 @@
                                 <span class="tooltip-text">Add a task</span>
                             </button>
                         </form>
-                        <form action="completeAllTasks" method="post">
-                            <button>Complete all tasks</button>
+                        <form action="app/tasks/completeAllTasks.php" method="post">
+                            <input type="hidden" name="deleteUserId" value="<?= $list['id']; ?> ">
+                            <button type="submit" class="btn">Complete all tasks</button>
                         </form>
                     </div>
 
