@@ -3,6 +3,8 @@
 <?php require __DIR__ . '/app/tasks/fetch.php'; ?>
 <?php require __DIR__ . '/app/data.php'; ?>
 
+
+
 <article>
     <!-- CREATE LIST/NOTE -->
     <section class="create-list">
@@ -60,14 +62,11 @@
                                                     <form action="/app/tasks/checkbox.php" method="post" class="checkbox-form" name="thisform<?php echo $task['id'] ?>">
                                                         <input type="hidden" value="<?= $task['id'] ?>" name="id" />
                                                         <!-- https://stackoverflow.com/questions/17660012/how-to-auto-submit-a-checkbox -->
-                                                        <input type="checkbox"
-                                                        onclick="document.forms.thisform<?= $task['id'] ?>.submit();"
-                                                        name="checkbox"
-                                                        <?php
-                                                        if ($task['completed'] == 1) :
-                                                            echo "checked";
-                                                        endif;
-                                                        ?>>
+                                                        <input type="checkbox" onclick="document.forms.thisform<?= $task['id'] ?>.submit();" name="checkbox" <?php
+                                                                                                                                                                if ($task['completed'] == 1) :
+                                                                                                                                                                    echo "checked";
+                                                                                                                                                                endif;
+                                                                                                                                                                ?>>
                                                     </form>
                                                 </div>
                                                 <!-- TASKS DISPLAY-->

@@ -3,11 +3,11 @@
 <article>
     <section>
         <p class="text-success">
-        <?php
-        if (isset($_SESSION['message'])) :
-            echo $_SESSION['message'];
-            unset($_SESSION['message']);
-        endif; ?>
+            <?php
+            if (isset($_SESSION['message'])) :
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+            endif; ?>
         </p>
     </section>
     <section class="bg-white p-3 border">
@@ -106,7 +106,10 @@
                 <small>Your account and its data will be deleted forever</small>
             </div>
             <div>
-                <button class="btn btn-danger">Delete account</button>
+                <form action="app/users/deleteuser.php" method="post">
+                    <input type="hidden" name="deleteUserId" value="<?= $_SESSION['user']['id']; ?> ">
+                    <button class="btn btn-danger" type="submit">Delete account</button>
+                </form>
             </div>
         </div>
     </section>
