@@ -124,6 +124,9 @@
                                 <span class="tooltip-text">Add a task</span>
                             </button>
                         </form>
+                        <form action="completeAllTasks" method="post">
+                            <button>Complete all tasks</button>
+                        </form>
                     </div>
 
                 </div>
