@@ -124,8 +124,9 @@
                                 <span class="tooltip-text">Add a task</span>
                             </button>
                         </form>
-                        <form action="app/tasks/completeAllTasks.php" method="post">
-                            <input type="hidden" name="deleteUserId" value="<?= $list['id']; ?> ">
+                        <?php die(var_dump($list['id'])); ?>
+                        <form action="app/tasks/completeAllTasks.php" method="POST">
+                            <input type="hidden" name="completeAllTasksId" value="<?= $list['id']; ?> ">
                             <button type="submit" class="btn">Complete all tasks</button>
                         </form>
                     </div>
