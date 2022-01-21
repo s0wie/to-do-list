@@ -1,6 +1,6 @@
 ![Gif of to-do-list that says work work work!](https://media.giphy.com/media/HYYbdk46gUzrgWi1Iz/giphy.gif)
 
-# Project Title
+# Stickywall
 
 This is the PHP winter project @yrgo. I made a to-do-list in the form of digital sticky notes where you can easily create tasks, edit tasks, delete them or even mark them as completed. All connected to a SQLite database. 
 
