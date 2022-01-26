@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+$delete = filter_var($_POST['deleteUserWriting'], FILTER_SANITIZE_STRING);
 
-if (isset($_POST['deleteUserId'])) {
+if ($delete === 'DELETE') {
+    $id = $_POST['deleteUserId'];
     $id = filter_var($_POST['deleteUserId'], FILTER_SANITIZE_NUMBER_INT);
     $statement = $database->prepare('DELETE FROM tasks WHERE user_id = :id');
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
@@ -22,4 +24,8 @@ if (isset($_POST['deleteUserId'])) {
     unset($_SESSION['user']);
 
     redirect('/');
+} else {
+    $_SESSION['deleteMessage'] = "Something went wrong, try again if you still want to delete your account.";
+
+    redirect("/account.php");
 }

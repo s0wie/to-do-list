@@ -126,7 +126,7 @@
                         </form>
                         <form action="app/tasks/completeAllTasks.php" method="POST">
                             <input type="hidden" name="completeAllTasksId" value="<?= $list['id']; ?> ">
-                            <button type="submit" class="btn">Complete all tasks</button>
+                            <button type="submit" class="btn completeAllTasksBtn">Complete all tasks</button>
                         </form>
                     </div>
 

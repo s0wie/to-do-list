@@ -29,3 +29,8 @@ Tested by the following people:
 
 1. Jane Doe
 2. John Doe
+
+# Wunderlist +
+
+-   Done by [Linnéa Eriksson](https://github.com/LinneaEriksson)
+-   Link to pull request [here!]()
