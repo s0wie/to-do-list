@@ -29,3 +29,8 @@ Tested by the following people:
 
 1. Oliver Davis
 2. Emma Ramstedt
+
+# Wunderlist +
+
+-   Done by [Linnéa Eriksson](https://github.com/LinneaEriksson)
+-   Link to pull request [here!]()
