@@ -68,7 +68,7 @@
         <form class="add-task-form" action="/tasks.php" method="POST" name="thisform<?php ?>">
             <label for="list-id-add"></label>
             <input type="hidden" name="list-id-add" id="list-id-add">
-            <input type="hidden" name="today-date" value="today">
+            <input type="hidden" name="today-date" value="today-date">
             <button type="submit" class="add-task btn add-class-container">
                 +
                 <span class="tooltip-text">Add a task</span>

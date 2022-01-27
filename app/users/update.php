@@ -2,6 +2,8 @@
 
 require __DIR__ . '/../autoload.php';
 
+// In this file, we handle changes to account details
+
 // HANDLING PROFILE PICTURE
 if (isset($_FILES['avatar'])) :
     $avatar = $_FILES['avatar'];

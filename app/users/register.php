@@ -5,6 +5,8 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 // In this file we register a new user.
+// TODO: add minimum password length = 16
+
 
 if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_STRING));

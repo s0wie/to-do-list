@@ -33,4 +33,4 @@ Tested by the following people:
 # Wunderlist +
 
 -   Done by [Linnéa Eriksson](https://github.com/LinneaEriksson)
--   Link to pull request [here!]()
+-   Link to pull request [here!](https://github.com/s0wie/to-do-list/commit/88fe8ece506e0cd0e0a8ba3361ca793e4331889e)

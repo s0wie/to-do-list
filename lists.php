@@ -133,6 +133,7 @@
                 </div>
             <?php endforeach ?>
         </div>
+    </section>
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
